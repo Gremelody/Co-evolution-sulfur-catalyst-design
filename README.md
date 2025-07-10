@@ -1,14 +1,15 @@
 # Co-evolution electronic reconfiguration programming for dual-behavior sulfur electrocatalyst
 Conventional catalysts manipulate electronic/geometric characteristics to optimize specific reactions thermodynamically, yet their static configurations lack intrinsic adaptability for dynamically modulating catalytic activity across complex reaction pathways and varied intermediates, resulting in inefficient multi-step catalytic processes. Meanwhile, catalyst reconstruction during (electro)chemical reactions undermines predictive catalyst design with theory-practice discrepancies. Herein, we demonstrate rational harnessing of dynamic catalyst reconstruction in lithium-sulfur (Li-S) batteries, achieving the transformative co-evolution catalysis where the catalyst evolves in tandem with the transformation requirements of diverse Li-S redox products (LSRPs), thus sustaining high-efficiency catalysis throughout the full-pathway.
+
 # 1. Requirements
 To run this project, you will need Python (3.8+ recommended) and several packages. You can install all the necessary dependencies using pip and the requirements.txt file provided below.
 
 Installation Steps
-1. Create a file named requirements.txt in your project's root directory.
+1. Create a file named requirements.txt or download our `requirements.txt` in your project's root directory.
 
 2. Copy and paste the following content into the requirements.txt file:
 
-```Plaintext
+```
 # Core data science & numerical libraries
 pandas
 numpy
@@ -163,8 +164,8 @@ Key Adjustable Parameters:
 Output:
 An Excel file (e.g., `predictions_...xlsx`) containing the original features from the unknown dataset, appended with prediction columns for each base model and the final stacking model.
 
-# 4. Access
+# 5. Access
 Data and code are under [MIT licence](https://github.com/Gremelody/Co-evolution-sulfur-catalyst-design/blob/main/LICENSE). Correspondence to Prof. [Guangmin Zhou](mailto:guangminzhou@sz.tsinghua.edu.cn) when you use, or have any inquiries.
 
-# 5. Acknowledgements
+# 6. Acknowledgements
 [Yifei Zhu](zhuyifeiedu@126.com) at Tsinghua University conceived and formulated the algorithms, deposited model/experimental code, and authored this guideline document drawing on supplementary materials.
