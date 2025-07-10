@@ -88,7 +88,7 @@ Other outputs include correlation matrices and a summary of the feature selectio
 
 ## 4.2 Tree_stacking.ipynb
 This integrated notebook handles hyperparameter tuning, model validation, and prediction using a tree-based stacking ensemble. It is composed of three main parts that should be run in order.
-## 4.2.1 Base-Learner Hyperparameter Optimization
+### 4.2.1 Base-Learner Hyperparameter Optimization
 This section uses Bayesian Optimization to find the best hyperparameters for several base models.
 
 Input File:
@@ -100,7 +100,7 @@ Key Adjustable Parameters:
 
 Output:
 This part does not save files. Instead, it stores the optimized model configurations in the grid_searches variable in memory for the next steps.
-## 4.2.2 Stacking Model Cross-Validation & Evaluation
+### 4.2.2 Stacking Model Cross-Validation & Evaluation
 This section evaluates the performance of the complete stacking model using Leave-P-Out Cross-Validation (LPO-CV) and provides detailed model analysis.
 
 Input:
@@ -113,7 +113,7 @@ SHAP Feature Importance Plots: A bar plot and a swarm plot are displayed directl
 `shap_swarm_data_...xlsx`: Detailed data from the SHAP analysis.
 `cv_predictions_pivoted_...xlsx`: Detailed prediction results from each CV fold.
 `cv_model_scores_per_run_pivoted_...xlsx`: MAE and RMSE scores for each model in every CV run.
-## 4.2.3 Prediction on Unknown Data
+### 4.2.3 Prediction on Unknown Data
 This final section uses the fully trained and validated stacking model to make predictions on a new, unseen dataset.
 
 Input File:
