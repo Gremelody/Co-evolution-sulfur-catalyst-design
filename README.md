@@ -1,15 +1,52 @@
 # Co-evolution electronic reconfiguration programming for dual-behavior sulfur electrocatalyst
 Conventional catalysts manipulate electronic/geometric characteristics to optimize specific reactions thermodynamically, yet their static configurations lack intrinsic adaptability for dynamically modulating catalytic activity across complex reaction pathways and varied intermediates, resulting in inefficient multi-step catalytic processes. Meanwhile, catalyst reconstruction during (electro)chemical reactions undermines predictive catalyst design with theory-practice discrepancies. Herein, we demonstrate rational harnessing of dynamic catalyst reconstruction in lithium-sulfur (Li-S) batteries, achieving the transformative co-evolution catalysis where the catalyst evolves in tandem with the transformation requirements of diverse Li-S redox products (LSRPs), thus sustaining high-efficiency catalysis throughout the full-pathway.
-# 1. Setting
-## 1.1 Enviroments
-* Python (Jupyter notebook) 
-## 1.2 Python requirements
-* python=3.12
-* numpy=1.26.4
-* matplotlib=3.8.4
-* scipy=1.14.1
-* scikit-learn=1.4
-* pandas=2.2.2
+# 1. Requirements
+To run this project, you will need Python (3.8+ recommended) and several packages. You can install all the necessary dependencies using pip and the requirements.txt file provided below.
+
+Installation Steps
+1. Create a file named requirements.txt in your project's root directory.
+
+2. Copy and paste the following content into the requirements.txt file:
+
+Plaintext
+```
+# Core data science & numerical libraries
+pandas
+numpy
+scikit-learn
+
+# Machine learning libraries
+xgboost
+lightgbm
+catboost
+scikit-optimize
+
+# Model interpretation
+shap
+
+# Plotting & visualization
+matplotlib
+seaborn
+
+# Utilities
+tqdm
+openpyxl
+
+# Jupyter environment to run the notebooks
+jupyter
+ipython
+```
+3. Open your terminal or command prompt, navigate to your project directory, and execute the following command to install all the required packages:
+```
+pip install -r requirements.txt
+```
+Library Descriptions
+Core Libraries: `pandas`, `numpy`, and `scikit-learn` are essential for data manipulation, numerical operations, and machine learning tasks.
+Machine Learning Libraries: `xgboost`, `lightgbm`, `catboost` are powerful gradient boosting libraries used as base learners in the stacking model. `scikit-optimize` is used for Bayesian hyperparameter tuning.
+Model Interpretation: `shap` is used for feature importance analysis and explaining model predictions.
+Plotting & Visualization: `matplotlib` and `seaborn` are used to generate plots, such as the SHAP summary plots.
+Utilities: `tqdm` provides progress bars for long-running tasks, and `openpyxl` is required for reading and writing `.xlsx` files with pandas.
+Jupyter Environment: `jupyter` and `ipython` are necessary to run the `.ipynb` notebook files.
 
 # 2. Datasets
 * Raw and processed datasets have been deposited in `Original dataset`, `Band alignment-feature engineeringed.xlsx`, `Band alignment-prediction.xlsx`, `Shift range-feature engineeringed.xlsx`, and `Shift range-prediction.xlsx` which can be accessed at this page.
