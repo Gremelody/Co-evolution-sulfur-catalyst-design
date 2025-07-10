@@ -8,8 +8,7 @@ Installation Steps
 
 2. Copy and paste the following content into the requirements.txt file:
 
-Plaintext
-```
+```Plaintext
 # Core data science & numerical libraries
 pandas
 numpy
