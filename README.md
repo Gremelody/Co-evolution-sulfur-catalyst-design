@@ -66,9 +66,14 @@ To avoid biased evaluations from tree models' intrinsic feature importances, we 
 | | Volume | *V* | Volume of van der Waals surface |
 | | Density | *D* | Atomic Weight/Volume |
 | | Overall surface area | *SA* | The surface area of a van der Waals surface |
+| **Chemical features** | Main group number | *MGN* | The period number of an element in the periodic table. |
+| | Period number | *PN* | The main group ordinal number of an element in the periodic table of elements |
+| | Covalent Radius | *CR* | The covalent radii of elements |
+| | Electronegativity | *EN* | The Pauling electronegativity of elements. |
+| | pValence | *Pv* | The number of p - electrons possessed by the element |
 
 # 4. Access
-Data and code are under [MIT licence](https://github.com/terencetaothucb/intelligent-molecular-skeleton-design/blob/main/LICENSE). Correspondence to Prof. [Guangmin Zhou](mailto:guangminzhou@sz.tsinghua.edu.cn) and Prof. [Xuan Zhang](mailto:xuanzhang@sz.tsinghua.edu.cn) when you use, or have any inquiries.
+Data and code are under [MIT licence](https://github.com/terencetaothucb/intelligent-molecular-skeleton-design/blob/main/LICENSE). Correspondence to Prof. [Guangmin Zhou](mailto:guangminzhou@sz.tsinghua.edu.cn) when you use, or have any inquiries.
 
 # 5. Acknowledgements
-[Yifei Zhu](zhuyifeiedu@126.com) and [Terence (Shengyu) Tao](mailto:terencetaotbsi@gmail.com) at Tsinghua University conceived and formulated the algorithms, deposited model/experimental code, and authored this guideline document drawing on supplementary materials.
+[Yifei Zhu](zhuyifeiedu@126.com) at Tsinghua University conceived and formulated the algorithms, deposited model/experimental code, and authored this guideline document drawing on supplementary materials.
