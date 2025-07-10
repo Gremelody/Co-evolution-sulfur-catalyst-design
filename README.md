@@ -2,7 +2,7 @@
 Conventional catalysts manipulate electronic/geometric characteristics to optimize specific reactions thermodynamically, yet their static configurations lack intrinsic adaptability for dynamically modulating catalytic activity across complex reaction pathways and varied intermediates, resulting in inefficient multi-step catalytic processes. Meanwhile, catalyst reconstruction during (electro)chemical reactions undermines predictive catalyst design with theory-practice discrepancies. Herein, we demonstrate rational harnessing of dynamic catalyst reconstruction in lithium-sulfur (Li-S) batteries, achieving the transformative co-evolution catalysis where the catalyst evolves in tandem with the transformation requirements of diverse Li-S redox products (LSRPs), thus sustaining high-efficiency catalysis throughout the full-pathway.
 
 # 1. Requirements
-To run this project, you will need Python (3.8+ recommended) and several packages. You can install all the necessary dependencies using pip and the requirements.txt file provided below.
+To run this project, you will need Python (3.10+ recommended) and several packages. You can install all the necessary dependencies using pip and the requirements.txt file provided below.
 
 Installation Steps
 1. Create a file named requirements.txt or download our `requirements.txt` in your project's root directory.
