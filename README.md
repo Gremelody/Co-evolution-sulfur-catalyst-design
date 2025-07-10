@@ -11,7 +11,7 @@ Conventional catalysts manipulate electronic/geometric characteristics to optimi
 * scikit-learn=1.4
 * pandas=2.2.2
 
-# 2. Datasets
+# 2. Contributions
 * Raw and processed datasets have been deposited in `Original dataset`, `Band alignment-feature engineeringed.xlsx`, `Band alignment-prediction.xlsx`, `Shift range-feature engineeringed.xlsx`, and `Shift range-prediction.xlsx` which can be accessed at this page.
 
 # 3. Experiment
