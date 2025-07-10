@@ -48,25 +48,24 @@ To efficiently utilize the limited dataset, this optimization was performed usin
 
 ## 3.5 Feature importance analysis
 To avoid biased evaluations from tree models' intrinsic feature importances, we utilized the more authoritative SHAP (SHapley Additive exPlanations) analysis for model feature importance assessment. Furthermore, to circumvent the high computational cost of shap.KernelExplainer for large datasets, we employed shap.TreeExplainer, which is optimized for tree-based models, to analyze each base model individually. The feature importance for the overall fusion model was derived by aggregating the SHAP values from individual base models. Specifically, for each held-out fold within the LPOCV, we calculated the local SHAP values for each base model's predictions. These local SHAP values were then weighted by e^(-RMSE), where RMSE represents that base model's performance on the corresponding held-out fold. These weighted local SHAP values were subsequently averaged across all base models to obtain the fusion model's local feature importance for that fold. The absolute values of these local importances were then averaged to represent the global feature importance for that specific LPOCV partition. Finally, the global feature importances obtained from all different dataset partitions (from the LPOCV runs) were arithmetically averaged to yield the final robust feature importances.
-## 3.6 The detailed description of electronic and geometric features used in this work
-| Feature Type        | Feature                          | Abbreviations      | Description                                                                 |
-|---------------------|----------------------------------|--------------------|-----------------------------------------------------------------------------|
-| ​**​Electronic Features​**​ | Average electronegativity       | $\overline{EN}$    | Mean value of Pauling electronegativity of all atoms                        |
-|                     | Chemical potential              | $\mu$              | the mean of the energies of HOMO and LUMO                                         |
-|                     | Hardness                         | $H$                | The ability to resist changes in electron density                          |
-|                     | Electrophilicity index           | $I_E$              | An indicator of the ability to attract electrons                           |
-|                     | Nucleophilicity index            | $I_N$              | An indicator of the ability to supply electrons                            |
-|                     | Average bond order               | $\overline{BO}$    | Mean value of all bond orders                                               |
-|                     | Minimal value                    | $\varphi_{min}$    | Minimum value of van der Waals surface electrostatic potential             |
-|                     | Maximal value                    | $\varphi_{max}$    | Maximum value of van der Waals surface electrostatic potential             |
-|                     | Molecular polarity index         | $P_M$              | Degree of charge separation within functional groups                        |
-| ​**​Geometric Features​**​ | Volume                          | $V$                | Volume of van der Waals surface                                             |
-|                     | M/V                             | M/V                | Density of Functional Groups (Total Atomic Weight/Volume)                   |
-|                     | Sphericity                      | $S$                | Degree of the geometric configuration's approximation to a spherical shape |
-|                     | Overall surface area            | $A_S$              | The surface area of a van der Waals surface                                 |
-|                     | Distance between Pyrimidine and maximum | $d_{Pyr - \varphi_{max}}$ | Distance between maximum point of electrostatic potential and center of pyrimidine |
-|                     | Distance between Pyrimidine and minimum | $d_{Pyr - \varphi_{min}}$ | Distance between minimum point of electrostatic potential and center of pyrimidine |
 
+## 3.6 The detailed features used in this work
+| Feature type | Feature | Abbreviations | Description |
+|---|---|---|---|
+| **Electronic features** | Vertical IP | *VIP* | The minimum energy required to completely remove an electron from an atom |
+| | Vertical EA | *VEA* | The energy released when an atom gains an electron and forms a negative ion |
+| | Chemical potential | *CP* | Approximately represented as the average of the energies of HOMO and LUMO |
+| | Hardness | *H* | The ability to resist changes in electron density |
+| | Electrophilicity index | *Ei* | An indicator of the ability to attract electrons |
+| | Nucleophilicity index | *Ni* | An indicator of the ability to supply electrons |
+| | Maximal value | *Maxv* | Maximum value of van der Waals surface electrostatic potential |
+| | Minimal value | *Minv* | Minimum value of van der Waals surface electrostatic potential |
+| | Internal charge separation | *Pi* | Degree of charge separation within an atom |
+| **Geometric features** | Dopant-sulfur distance | *DSD* | Distance between dopant and sulfur |
+| | Dopant-metal distance | *DMD* | Distance between dopant and metal |
+| | Volume | *V* | Volume of van der Waals surface |
+| | Density | *D* | Atomic Weight/Volume |
+| | Overall surface area | *SA* | The surface area of a van der Waals surface |
 
 # 4. Access
 Data and code are under [MIT licence](https://github.com/terencetaothucb/intelligent-molecular-skeleton-design/blob/main/LICENSE). Correspondence to Prof. [Guangmin Zhou](mailto:guangminzhou@sz.tsinghua.edu.cn) and Prof. [Xuan Zhang](mailto:xuanzhang@sz.tsinghua.edu.cn) when you use, or have any inquiries.
