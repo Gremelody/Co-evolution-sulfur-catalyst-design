@@ -16,6 +16,8 @@ Conventional catalysts manipulate electronic/geometric characteristics to optimi
 
 # 3. Experiment
 ## 3.1 Overview
+In this research, to achieve precise electronic structure programming for accurately matching lithium polysulfides and catalysts in different states, we integrated a density functional theory-machine learning framework to screen optimal dopants under dual-objective conditions.
+
 This page contains three databases:
 1. `Original dataset.xlsx`: Two target values (target 1: band alignment; target 2: shift range) and 25-dimentional features (containing electronic, structural and chemical features) for each element.
 2. `Band alignment-feature engineeringed.xlsx`: Under target 1，Features and target values after feature engineering
@@ -27,41 +29,10 @@ Two Jupyter Notebooks:
 1. `Feature engineering.ipynb`: Two-stage (filter-embedded integred method) feature engineering.
 2. `Tree_stacking.ipynb`: Hyperparameter tuning process of seven base learners based on tree models.
 
-   
-In this research, to achieve precise electronic structure programming for accurately matching lithium polysulfides and catalysts in different states, we integrated a density functional theory-machine learning framework to screen optimal dopants under dual-objective conditions.
-   
-## 3.2 Construction of chemical space
-We randomly chosen 34 non-repetitive CPyr-based molecules along with basic CPyr to generate a library of 35 non-repetitive CPyr-based molecules (`Molecular dual-target values dataset.xlsx`) from a 196-sample-space considering 7 functional groups and 3 grafting sites (considering the symmetries of site-4 and site-6).
+## 3.2 Dataset establishment
+To achieve precise computational-experimental matching, we employed the vaspsol add-on package to describe the implicit solvent environment for 1M LiTFSI + 1 wt% LiNO3. By utilizing the HSE06 hybrid functional, we mitigated the errors of the generalized gradient approximation in the electron exchange potential. The catalyst and lithium polysulfide molecules were encapsulated in a periodic boundary condition box, with a 20 Å vacuum layer separating the upper and lower mirrors to ensure alignment of their vacuum energy levels and eliminate the influence of non-physical long-range electrostatic interactions.
 
-We calculated the 50-dimensional physical properties of 7 functional groups to construct functional group characteristics space (`Functional group features.xlsx`). To mitigate the risk of multicollinearity-induced dilution effects in subsequent tree-based models, we manually removed features exhibiting physical redundancy and selected 9 electronic features and 6 geometric features to describe a functional group to prevent contribution attenuation (For details, see 3.6).
-
-## 3.3 Data augmentation
-To avoid the overfitting issue in the case of small sample size, we make full use of the symmetry of the site-4 and site-6 of CPyr-based molecules. Specifically, we carried out initial data enhancement by exchanging the functional groups on site-4 and site-6 in the database. In addition, We introduce extra data containing Gaussian noise (`noise.ipynb`), with the same quantity as the original data to perform secondary data enhancement, thereby further reducing the risk of overfitting. We determine the intensity of Gaussian noise by calculating the standard deviation of each feature or target value in the training set. Specifically, we introduce Gaussian noise with a mean of 0 and a standard deviation equal to 0.1 times of the original data column in the original dataset, following the normal distribution below. 
-
-$$ f(x) = \frac{1}{\sigma\sqrt{2\pi}} e^{-\frac{(x-μ)^2}{2\sigma^2}} $$
-
-Among them, σ is the standard deviation of Gaussian noise, μ is the mean value of Gaussian noise.
-
-```python
-df = pd.read_excel('Data Augmentation4.xlsx')
-
-# Calculate the standard deviation of each feature.
-std_devs = df.iloc[:, 1:].std()
-# std_devs = 1
-
-# Define the standard deviation multiple of noise.
-noise_multiplier = 0.1
-
-# Generate Gaussian noise
-noisy_data = df.copy()
-for col_name, std_dev in std_devs.items():
-    noise = np.random.normal(0, std_dev * noise_multiplier, df.shape[0])
-    noisy_data[col_name] += noise
-
-noisy_data.to_excel('new_database.xlsx', index=False)
-```
-
-## 3.4 Homogeneous ensemble of tree models
+## 3.3 Feature engineering
 ### 3.4.1 Hyperparameter grid search
 To enhance the model’s generalization ability and robustness while maintaining interpretability of tree model, we selected six widely used tree-based models as sub-models: Random Forest (RF), Gradient Boosting Regression Tree (GBRT), CatBoost Regression (CBR), AdaBoost Regression (ABR), XGBoost Regression (XGBR), and LightGBM (LGBM). For each sub-model, the optimal hyperparameters were identified via grid search optimization guided by the coefficient of determination $$R^2$$ evaluation metric (`tree_voting_tunning.ipynb`). 
 
