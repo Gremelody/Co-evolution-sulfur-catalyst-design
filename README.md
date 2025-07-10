@@ -11,14 +11,14 @@ Conventional catalysts manipulate electronic/geometric characteristics to optimi
 * scikit-learn=1.4
 * pandas=2.2.2
 
-# 2. Contributions
+# 2. Datasets
 * Raw and processed datasets have been deposited in `Original dataset`, `Band alignment-feature engineeringed.xlsx`, `Band alignment-prediction.xlsx`, `Shift range-feature engineeringed.xlsx`, and `Shift range-prediction.xlsx` which can be accessed at this page.
 
 # 3. Experiment
 ## 3.1 Overview
 In this research, to achieve precise electronic structure programming for accurately matching lithium polysulfides and catalysts in different states, we integrated a density functional theory-machine learning framework to screen optimal dopants under dual-objective conditions.
 
-This page contains three databases:
+This page contains three datasets:
 1. `Original dataset.xlsx`: Two target values (target 1: band alignment; target 2: shift range) and 25-dimentional features (containing electronic, structural and chemical features) for each element.
 2. `Band alignment-feature engineeringed.xlsx`: Under target 1，Features and target values after feature engineering
 3. `Shift range-feature engineeringed.xlsx`: Under target 1，Features and target values after feature engineering
