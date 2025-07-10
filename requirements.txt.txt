@@ -1,0 +1,25 @@
+# Core data science & numerical libraries
+pandas
+numpy
+scikit-learn
+
+# Machine learning libraries
+xgboost
+lightgbm
+catboost
+scikit-optimize
+
+# Model interpretation
+shap
+
+# Plotting & visualization
+matplotlib
+seaborn
+
+# Utilities
+tqdm
+openpyxl
+
+# Jupyter environment to run the notebooks
+jupyter
+ipython
