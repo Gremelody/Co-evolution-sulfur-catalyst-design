@@ -73,7 +73,7 @@ To avoid biased evaluations from tree models' intrinsic feature importances, we 
 | | pValence | *Pv* | The number of p - electrons possessed by the element |
 
 # 4. Access
-Data and code are under [MIT licence](https://github.com/terencetaothucb/intelligent-molecular-skeleton-design/blob/main/LICENSE). Correspondence to Prof. [Guangmin Zhou](mailto:guangminzhou@sz.tsinghua.edu.cn) when you use, or have any inquiries.
+Data and code are under [MIT licence](https://github.com/Gremelody/Co-evolution-sulfur-catalyst-design/blob/main/LICENSE). Correspondence to Prof. [Guangmin Zhou](mailto:guangminzhou@sz.tsinghua.edu.cn) when you use, or have any inquiries.
 
 # 5. Acknowledgements
 [Yifei Zhu](zhuyifeiedu@126.com) at Tsinghua University conceived and formulated the algorithms, deposited model/experimental code, and authored this guideline document drawing on supplementary materials.
